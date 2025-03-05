@@ -1,51 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import emailjs from '@emailjs/browser';
 import { Form } from 'sg-form-lib';
 import { Modal } from 'sg-library';
 import { formFieldsContact } from '../utils/formFieldsConfig/formFieldsContact';
-import { useAppSelector } from '../hooks/reduxHooks';
-import { selectProfile } from '../features/profileSlice';
 
 interface I_ContactProps {
   toggleModal: () => void;
   contactModalOpen: boolean;
 }
 
-interface I_FormValues {
-  recipientEmail: string;
-  senderFirstname: string;
-  senderLastname: string;
-  senderEmail: string;
-  message: string;
-}
-
 const Contact: React.FC<I_ContactProps> = ({
   toggleModal,
   contactModalOpen,
 }) => {
-  const profile = useAppSelector(selectProfile);
-
   const [isSend, setIsSend] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [btnText, setBtnText] = useState('Annuler');
-  const [formValues, setFormValues] = useState<I_FormValues>({
+  const formValues = {
     recipientEmail: 'test@email.fr',
-    senderFirstname: '',
-    senderLastname: '',
-    senderEmail: '',
-    message: '',
-  });
-
-  useEffect(() => {
-    if (profile) {
-      setFormValues((prevValues) => ({
-        ...prevValues,
-        senderEmail: profile.email,
-        senderFirstname: profile.firstName,
-        senderLastname: profile.lastName,
-      }));
-    }
-  }, [profile]);
+    // senderFirstname: '',
+    // senderLastname: '',
+    // senderEmail: '',
+    // message: '',
+  };
 
   const sendEmail = () => {
     console.log('send email');
