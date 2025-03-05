@@ -1,0 +1,9 @@
+.scroll_to_top {
+  margin-left: 90vw;
+  position: fixed;
+  top: 95vh;
+  z-index: 99;
+  @include mixins.media-breakpoint('min', medium-mobile) {
+    margin-left: 94vw;
+  }
+}

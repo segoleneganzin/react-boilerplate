@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use './variables';
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin full-height-width {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin pseudo-elem {
+  @include fullHeightWidth;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@mixin on-event() {
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-within {
+    @content;
+  }
+}
+
+@mixin media-breakpoint($type, $breakpoint) {
+  @if map.has-key(variables.$breakpoints, $breakpoint) {
+    @if $type == 'min' {
+      @media screen and (min-width: #{map.get(variables.$breakpoints, $breakpoint)}) {
+        @content;
+      }
+    } @else if $type == 'max' {
+      @media screen and (max-width: #{map.get(variables.$breakpoints, $breakpoint)}) {
+        @content;
+      }
+    } @else {
+      @warn "Invalid type `#{$type}` provided. Use either 'min' or 'max'.";
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}

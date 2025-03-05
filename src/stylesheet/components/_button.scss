@@ -1,0 +1,45 @@
+@use '../abstracts/functions';
+
+.btn,
+.sg-form-lib__btn,
+.sg-library__modal-btn {
+  border-radius: functions.radius(small);
+  cursor: pointer;
+  height: fit-content;
+  padding: 5px 20px;
+  position: relative;
+  width: fit-content;
+  &:active {
+    box-shadow: none;
+    transform: translate(1px, 5px);
+  }
+  &::after,
+  &::before {
+    border-radius: functions.radius(small);
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    @include pseudo-elem;
+  }
+  &::after {
+    z-index: -1;
+  }
+  &::before {
+    z-index: 1;
+  }
+  &:hover {
+    background: lighten(functions.color(text), 5%);
+    &::before {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+  &-cancel {
+    background: functions.color(error);
+    &::after {
+      z-index: -1;
+      background: lighten(functions.color(error), 5%);
+    }
+  }
+}

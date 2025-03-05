@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use './variables';
+
+@function color($key) {
+  @if map.has-key(variables.$colors, $key) {
+    @return map.get(variables.$colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@function fontSize($key) {
+  @if map.has-key(variables.$font-sizes, $key) {
+    @return map.get(variables.$font-sizes, $key);
+  }
+  @warn "Unknown `#{$key}` in $font-sizes.";
+  @return null;
+}
+
+@function radius($key) {
+  @if map.has-key(variables.$radius, $key) {
+    @return map.get(variables.$radius, $key);
+  }
+  @warn "Unknown `#{$key}` in $radius.";
+  @return null;
+}

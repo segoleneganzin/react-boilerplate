@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+.container {
+  margin: auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

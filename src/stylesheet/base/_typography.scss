@@ -1,0 +1,25 @@
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+
+/* google font Anton + Manrope*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap');
+
+/****************************************************** FONTS */
+body,
+input,
+select {
+  font-family: Manrope, sans-serif;
+}
+
+/****************************************************** COLORS */
+body,
+input,
+select {
+  color: functions.color(text);
+}
+a {
+  color: functions.color(link);
+  @include mixins.on-event {
+    color: functions.color(tertiary);
+  }
+}

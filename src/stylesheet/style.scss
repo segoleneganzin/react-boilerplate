@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+// ****** 2. Vendors
+@use 'vendors/sg-library';
+
+// ****** 3. Base stuff
+@use 'base/global';
+@use 'base/typography';
+@use 'base/helpers';
+@use 'base/normalize';
+
+// ****** 4. Layouts
+@use 'layouts/header';
+@use 'layouts/footer';
+// Layouts / templates
+@use 'layouts/templates/pageLayout';
+
+// ****** 5. Components
+@use 'components/menu';
+
+// ****** 6. Pages
+@use 'pages/home';
+
+// ****** 7. Themes

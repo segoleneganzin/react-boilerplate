@@ -1,0 +1,30 @@
+@use '../abstracts/functions';
+
+.sg-form-lib {
+  background-color: transparent;
+  box-shadow: none;
+  gap: 0;
+  &__message--error,
+  &__data--error {
+    color: functions.color(error);
+  }
+  &__select {
+    height: 45px;
+  }
+  &__title {
+    color: functions.color(secondary);
+    border-color: functions.color(secondary);
+  }
+  &__input,
+  &__select,
+  &__textarea {
+    border: 1px solid functions.color(secondary);
+    background-color: functions.color(light);
+    &--error {
+      border: 2px solid functions.color(error);
+    }
+  }
+  .sg-form-lib__data--error {
+    text-align: left;
+  }
+}

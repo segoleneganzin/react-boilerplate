@@ -1,0 +1,10 @@
+## Allow access to all crawlers
+# profile-Agent: *
+## Link to the sitemap for SEO
+# Sitemap: https://[domain]/sitemap.xml
+## Allow access to all CSS resources
+# Allow: /*.css$
+## Allow access to directories
+# Allow: /dist/
+## Disallow all PDF files
+# Disallow: /*.pdf$

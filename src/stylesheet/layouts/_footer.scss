@@ -1,0 +1,5 @@
+@use '../abstracts/functions';
+
+.footer {
+  background-color: functions.color(primary);
+}
