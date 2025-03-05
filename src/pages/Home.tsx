@@ -1,21 +1,28 @@
-import { useNavigate } from 'react-router-dom';
-import Cta from '../components/Cta';
+import Hero from '../layouts/Hero';
+import PageLayout from '../layouts/templates/PageLayout';
+import SectionLayout from '../layouts/templates/SectionLayout';
+import ErrorBoundary from '../components/ErrorBoundary';
+import { homeSections } from '../utils/sections';
 
-const Landing = () => {
-  const navigate = useNavigate();
-
+const Home = () => {
   return (
-    <main className='landing'>
-      <div className='landing__content'>
-        <h1>Nom du site</h1>
-        <Cta
-          handleClick={() => navigate('/')}
-          classname='btn landing__cta'
-          content='CTA'
-        />
-      </div>
-    </main>
+    <ErrorBoundary>
+      <PageLayout mainClassName='home'>
+        <div className='home__content'>
+          <Hero />
+          {homeSections.map((section) => (
+            <SectionLayout
+              key={section.id}
+              sectionId={section.id}
+              title={section.title}
+            >
+              <p>{section.content}</p>
+            </SectionLayout>
+          ))}
+        </div>
+      </PageLayout>
+    </ErrorBoundary>
   );
 };
 
-export default Landing;
+export default Home;

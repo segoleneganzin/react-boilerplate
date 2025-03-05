@@ -3,14 +3,10 @@
 .header {
   align-items: center;
   display: flex;
+  height: 80px;
   justify-content: space-between;
   padding: 10px 0 0 10px;
-  width: 90%;
-  @include mixins.media-breakpoint(min, small-mobile) {
-    padding: 10px;
-  }
   @include mixins.media-breakpoint(min, tablet) {
-    padding: 20px 20px;
-    width: 94%;
+    padding: 20px;
   }
 }

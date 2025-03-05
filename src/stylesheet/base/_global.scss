@@ -33,7 +33,7 @@ main {
   flex: 1;
   gap: 20px;
   margin: 15px 0px;
-  @include mixins.media-breakpoint('min', tablet) {
-    margin: 15px 0px;
-  }
+  // @include mixins.media-breakpoint('min', tablet) {
+  //   margin: 15px 0px;
+  // }
 }

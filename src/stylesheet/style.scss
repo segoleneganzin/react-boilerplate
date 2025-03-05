@@ -1,22 +1,29 @@
 @charset "UTF-8";
 
 // ****** 2. Vendors
-@use 'vendors/sg-library';
+@use 'vendors/sg-form-lib';
 
 // ****** 3. Base stuff
+@use 'base/buttons';
 @use 'base/global';
-@use 'base/typography';
 @use 'base/helpers';
+@use 'base/links';
 @use 'base/normalize';
+@use 'base/text';
+@use 'base/typography';
 
 // ****** 4. Layouts
-@use 'layouts/header';
 @use 'layouts/footer';
+@use 'layouts/header';
+@use 'layouts/hero';
+@use 'layouts/menu';
 // Layouts / templates
 @use 'layouts/templates/pageLayout';
 
 // ****** 5. Components
-@use 'components/menu';
+@use 'components/button';
+@use 'components/loader';
+@use 'components/scrollUp';
 
 // ****** 6. Pages
 @use 'pages/home';
