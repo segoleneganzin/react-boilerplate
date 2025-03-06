@@ -1,11 +1,17 @@
 @use '../abstracts/mixins';
+@use '../abstracts/functions';
 
 .header {
   align-items: center;
+  background-color: functions.color(background);
   display: flex;
   height: 80px;
   justify-content: space-between;
-  padding: 10px 0 0 10px;
+  padding: 0 10px;
+  position: sticky;
+  z-index: 999;
+  top: -5px;
+  box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
   @include mixins.media-breakpoint(min, tablet) {
     padding: 20px;
   }

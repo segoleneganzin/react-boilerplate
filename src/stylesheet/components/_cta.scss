@@ -1,0 +1,51 @@
+@use '../abstracts/functions';
+
+.cta {
+  border: 4px solid functions.color(tertiary);
+  color: functions.color(tertiary);
+  font-size: functions.fontSize(medium);
+  letter-spacing: 2px;
+  max-width: fit-content;
+  padding: 0.9em 1.6em;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 700ms ease;
+  z-index: 1;
+  &__blobs {
+    bottom: -3px;
+    filter: url(#goo);
+    height: 110%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: -1px;
+    top: -2px;
+    z-index: -1;
+    div {
+      background-color: functions.color(tertiary);
+      width: 34%;
+      height: 100%;
+      border-radius: 100%;
+      position: absolute;
+      transform: scale(1.4) translateY(125%) translateZ(0);
+      transition: all 700ms ease;
+      &:nth-child(1) {
+        left: -5%;
+      }
+      &:nth-child(2) {
+        left: 30%;
+        transition-delay: 60ms;
+      }
+      &:nth-child(3) {
+        left: 66%;
+        transition-delay: 25ms;
+      }
+    }
+  }
+  &:hover {
+    color: functions.color(background);
+    .cta__blobs div {
+      transform: scale(1.4) translateY(0) translateZ(0);
+    }
+  }
+}

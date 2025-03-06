@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className='hero'>
       <div className='hero__text'>
-        <h2 className='hero__title'>Hero Title</h2>
+        <h2 className='hero__title bold'>Hero Title</h2>
         <p className='hero__description'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.
@@ -15,7 +15,7 @@ const Hero = () => {
         </p>
         <Cta
           handleClick={() => navigate('/')}
-          classname='btn hero__cta'
+          classname='hero__cta'
           content='Call to action'
         />
       </div>

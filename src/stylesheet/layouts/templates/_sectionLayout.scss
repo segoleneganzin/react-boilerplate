@@ -1,0 +1,19 @@
+@use '../../abstracts/mixins';
+@use '../../abstracts/functions';
+
+.section-layout {
+  margin: 0 25px;
+  &__title {
+    font-size: functions.fontSize('large');
+  }
+  &__title,
+  &__content p {
+    text-align: center;
+  }
+  @include mixins.media-breakpoint(min, tablet) {
+    &__title,
+    &__content p {
+      text-align: left;
+    }
+  }
+}

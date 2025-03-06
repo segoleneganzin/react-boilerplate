@@ -2,38 +2,6 @@
 @use '../abstracts/mixins';
 
 .menu {
-  display: none;
-  &__list {
-    align-items: center;
-    display: flex;
-    gap: 2rem;
-  }
-
-  &--responsive {
-    animation: open-hamburger 200ms forwards;
-    background-color: functions.color('primary');
-    border-radius: 0;
-    height: fit-content;
-    position: absolute;
-    right: 0;
-    top: 80px;
-    transform-origin: top;
-    width: 100%;
-    z-index: 97;
-    .menu {
-      &__list {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 1.7rem;
-        margin-top: 0;
-        padding: 20px 20px 30px;
-      }
-      &__item-link {
-        color: functions.color('secondary');
-      }
-    }
-  }
   &__burger {
     background: transparent;
     cursor: pointer;
@@ -86,12 +54,50 @@
       }
     }
   }
+  &--responsive {
+    background-color: functions.color('primary');
+    border-radius: 0;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    width: 100%;
+    z-index: 97;
+    .menu {
+      &__list {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+        margin-top: 0;
+        padding: 20px 20px 30px;
+      }
+      &__item-link {
+        color: functions.color('secondary');
+      }
+    }
+  }
+  &--open {
+    transform: scaleY(1);
+  }
+
+  &--closed {
+    transform: scaleY(0);
+  }
 }
 
 @include mixins.media-breakpoint(min, desktop) {
   .menu {
     display: flex;
     margin-left: auto;
+    &__list {
+      align-items: center;
+      display: flex;
+      gap: 2rem;
+    }
     &__item-link {
       position: relative;
       &::after {
@@ -116,27 +122,9 @@
         }
       }
     }
-    &--responsive {
-      display: none;
-    }
     &__burger {
       display: none;
     }
-  }
-}
-
-@keyframes underscore-menu {
-  0% {
-    transform: scaleX(0);
-  }
-  25% {
-    transform: scaleX(0.3);
-  }
-  50% {
-    transform: scaleX(0.81);
-  }
-  100% {
-    transform: scaleX(1);
   }
 }
 
@@ -146,5 +134,14 @@
   }
   100% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes close-hamburger {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
   }
 }

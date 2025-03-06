@@ -1,12 +1,12 @@
 $colors: (
-  primary: rgb(53, 71, 53),
-  secondary: rgb(230, 227, 225),
-  tertiary: rgb(59, 126, 64),
-  light: rgb(255, 255, 255),
-  text: rgb(53, 71, 53),
-  link: rgb(53, 71, 53),
-  background: rgb(230, 227, 225),
-  error: rgb(255, 0, 0),
+  primary: #96897b,
+  secondary: #dfd5a5,
+  tertiary: #dbad6a,
+  light: #ecf0f1,
+  text: #2c3e50,
+  link: #cf995f,
+  background: #ecf0f1,
+  error: #e74c3c,
 );
 
 $breakpoints: (
@@ -28,5 +28,6 @@ $radius: (
 $font-sizes: (
   small: 0.8rem,
   medium: 1rem,
-  large: 1.2rem,
+  large: 1.5rem,
+  x-large: 2rem,
 );

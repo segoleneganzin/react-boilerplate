@@ -6,13 +6,25 @@ interface I_CtaProps {
 }
 const Cta: React.FC<I_CtaProps> = ({
   handleClick,
+  classname,
   content,
   ariaLabel = '',
 }) => {
   return (
-    <button className={`cta bold`} onClick={handleClick} aria-label={ariaLabel}>
-      {content}
-    </button>
+    <>
+      <button
+        className={`cta bold ${classname}`}
+        onClick={handleClick}
+        aria-label={ariaLabel}
+      >
+        {content}
+        <div className='cta__blobs'>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </button>
+    </>
   );
 };
 

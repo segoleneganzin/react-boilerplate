@@ -19,11 +19,13 @@
 @use 'layouts/menu';
 // Layouts / templates
 @use 'layouts/templates/pageLayout';
+@use 'layouts/templates/sectionLayout';
 
 // ****** 5. Components
 @use 'components/button';
 @use 'components/loader';
 @use 'components/scrollUp';
+@use 'components/cta';
 
 // ****** 6. Pages
 @use 'pages/home';

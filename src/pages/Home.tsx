@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <ErrorBoundary>
       <PageLayout mainClassName='home'>
-        <div className='home__content'>
+        <>
           <Hero />
           {homeSections.map((section) => (
             <SectionLayout
@@ -19,7 +19,7 @@ const Home = () => {
               <p>{section.content}</p>
             </SectionLayout>
           ))}
-        </div>
+        </>
       </PageLayout>
     </ErrorBoundary>
   );

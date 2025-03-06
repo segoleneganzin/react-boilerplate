@@ -13,8 +13,8 @@ const SectionLayout: React.FC<I_SectionLayoutProps> = ({
 }) => {
   return (
     <section id={sectionId} className='section-layout'>
-      {title && <h3>{title}</h3>}
-      {children}
+      {title && <h3 className='section-layout__title bold'>{title}</h3>}
+      <div className='section-layout__content'>{children}</div>
     </section>
   );
 };
